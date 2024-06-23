@@ -130,29 +130,24 @@ body {
     border-radius: 20px;
     border-bottom: 2px solid var(--text-color);
   }
-  
-  /* Rounded box for numbers and operators containers */
+
   .numbers-container,
   .operators-container {
+    display: flex;
+    flex-direction: column;
     background-color: var(--button-bg-color);
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
   }
   
-  .numbers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px; /* Increased gap for better spacing */
-  }
-  
+  .numbers,
   .operators {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Increased gap for better spacing */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; 
   }
   
-  /* Make AC button larger and red */
   #clear {
     padding: 25px;
     background-color: var(--red-color);
