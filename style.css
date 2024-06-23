@@ -112,7 +112,7 @@ body {
     overflow-y: auto;
     height: 80%;
   }
-/* Your existing CSS remains unchanged */
+/* Global styles remain the same */
 
 .calculator {
     width: 70%;
@@ -134,49 +134,26 @@ body {
   
   .buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align the buttons vertically */
-  }
-  
-  .numbers-operators-container {
-    display: flex;
-    justify-content: space-around; /* Space evenly between numbers and operators */
-    width: 100%;
-    margin-top: 10px; /* Adjust spacing between display and buttons */
+    justify-content: space-between; /* Align numbers and operators containers side by side */
+    margin-top: 10px; /* Adjust spacing */
+    height: 50%; /* Set the height of the buttons container */
   }
   
   .numbers {
+    flex: 1; /* Take half of the buttons container height */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px; /* Increased gap for better spacing */
   }
   
   .operators {
+    flex: 1; /* Take half of the buttons container height */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px; /* Increased gap for better spacing */
   }
   
-  /* Make AC button larger and red */
-  #clear {
-    padding: 25px;
-    background-color: var(--red-color);
-    color: white;
-    font-size: 1.5em;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  /* Make = button larger and green */
-  #equals {
-    padding: 25px;
-    background-color: var(--green-color);
-    color: white;
-    font-size: 1.5em;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
+  /* Styling for buttons remains unchanged */
   .btn {
     padding: 20px;
     font-size: 1.5em;
