@@ -132,24 +132,23 @@ body {
     border-bottom: 2px solid var(--text-color);
   }
   
-  .numbers-container {
-    flex: 1;
+  .buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: center; /* Center align the buttons vertically */
+  }
+  
+  .numbers-operators-container {
+    display: flex;
+    justify-content: space-around; /* Space evenly between numbers and operators */
+    width: 100%;
+    margin-top: 10px; /* Adjust spacing between display and buttons */
   }
   
   .numbers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px; /* Increased gap for better spacing */
-  }
-  
-  .operators-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
   .operators {
