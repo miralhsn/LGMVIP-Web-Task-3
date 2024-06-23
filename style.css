@@ -145,23 +145,21 @@ body {
   /* Rounded box for numbers and operators */
   .numbers-container,
   .operators-container {
-    flex: 2;
     background-color: var(--button-bg-color);
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   
   .numbers-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex: 2;
   }
   
   .operators-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex: 1;
   }
   
   /* Make AC button larger and red */
