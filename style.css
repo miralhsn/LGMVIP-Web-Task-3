@@ -112,6 +112,7 @@ body {
     overflow-y: auto;
     height: 80%;
   }
+/* Your existing CSS remains unchanged */
 
 .calculator {
     width: 70%;
@@ -130,24 +131,34 @@ body {
     border-radius: 20px;
     border-bottom: 2px solid var(--text-color);
   }
-
-  .numbers-container,
-  .operators-container {
+  
+  .numbers-container {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    background-color: var(--button-bg-color);
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
   }
   
-  .numbers,
-  .operators {
+  .numbers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px; 
+    gap: 15px; /* Increased gap for better spacing */
   }
   
+  .operators-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .operators {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; /* Increased gap for better spacing */
+  }
+  
+  /* Make AC button larger and red */
   #clear {
     padding: 25px;
     background-color: var(--red-color);
