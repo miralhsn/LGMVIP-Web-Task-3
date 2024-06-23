@@ -142,23 +142,28 @@ body {
     color: var(--text-color);
   }
   
-  /* Rounded box for numbers and operators */
-  .numbers-container,
-  .operators-container {
+  .buttons {
+    display: flex;
     flex: 2;
-    background-color: var(--button-bg-color);
-    border-radius: 20px;
-    padding: 10px;
     margin-top: 10px;
   }
   
-  .numbers-container {
+  .numbers, .operators {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .numbers {
+    flex: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px; /* Increased gap for better spacing */
   }
   
-  .operators-container {
+  .operators {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px; /* Increased gap for better spacing */
