@@ -140,20 +140,48 @@ body {
   }
   
   .numbers {
-    flex: 1; /* Take half of the buttons container height */
+    flex: 2; /* Take more space to accommodate numbers */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px; /* Increased gap for better spacing */
   }
   
+  .operators-container {
+    flex: 1; /* Take less space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--button-bg-color);
+    border-radius: 20px;
+  }
+  
   .operators {
-    flex: 1; /* Take half of the buttons container height */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px; /* Increased gap for better spacing */
   }
   
-  /* Styling for buttons remains unchanged */
+  /* Make AC button larger and red */
+  #clear {
+    padding: 20px;
+    background-color: var(--red-color);
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Make = button larger and green */
+  #equals {
+    padding: 20px;
+    background-color: var(--green-color);
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
   .btn {
     padding: 20px;
     font-size: 1.5em;
