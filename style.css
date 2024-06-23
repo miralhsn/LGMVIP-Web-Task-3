@@ -143,7 +143,7 @@ body {
     flex: 2; /* Take more space to accommodate numbers */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px; /* Increased gap for better spacing */
+    gap: 10px; /* Reduced gap for better spacing */
   }
   
   .operators-container {
@@ -159,32 +159,32 @@ body {
   .operators {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Increased gap for better spacing */
+    gap: 10px; /* Reduced gap for better spacing */
   }
   
   /* Make AC button larger and red */
   #clear {
-    padding: 20px;
+    padding: 15px;
     background-color: var(--red-color);
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
   }
   
   /* Make = button larger and green */
   #equals {
-    padding: 20px;
+    padding: 15px;
     background-color: var(--green-color);
     color: white;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
   }
   
   .btn {
-    padding: 20px;
-    font-size: 1.5em;
+    padding: 15px;
+    font-size: 1.2em;
     cursor: pointer;
     border: none;
     background-color: var(--button-bg-color);
