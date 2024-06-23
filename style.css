@@ -112,8 +112,8 @@ body {
     overflow-y: auto;
     height: 80%;
   }
-  
-  .calculator {
+
+.calculator {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -131,39 +131,22 @@ body {
     border-bottom: 2px solid var(--text-color);
   }
   
-  #history-display {
-    font-size: 1em;
-    color: var(--text-color);
-  }
-  
-  #current-display {
-    font-size: 2.5em;
-    text-align: right;
-    color: var(--text-color);
-  }
-  
-  .buttons {
-    display: flex;
-    flex: 2;
+  /* Rounded box for numbers and operators containers */
+  .numbers-container,
+  .operators-container {
+    background-color: var(--button-bg-color);
+    border-radius: 20px;
+    padding: 10px;
     margin-top: 10px;
   }
   
-  .numbers, .operators {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-  }
-  
   .numbers {
-    flex: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px; /* Increased gap for better spacing */
   }
   
   .operators {
-    flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px; /* Increased gap for better spacing */
