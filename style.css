@@ -153,15 +153,15 @@ body {
   }
   
   .numbers-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px; /* Increased gap for better spacing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   
   .operators-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Increased gap for better spacing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   
   /* Make AC button larger and red */
