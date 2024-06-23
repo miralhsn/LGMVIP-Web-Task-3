@@ -1,111 +1,60 @@
-const calculator = {
-    displayValue: '0',
-    firstOperand: null,
-    waitingForSecondOperand: false,
-    operator: null,
-    history: [],
-};
-
-function inputDigit(digit) {
-    const { displayValue, waitingForSecondOperand } = calculator;
-
-    if (waitingForSecondOperand === true) {
-        calculator.displayValue = digit;
-        calculator.waitingForSecondOperand = false;
-    } else {
-        calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
-    }
-}
-
-function inputDecimal(dot) {
-    if (calculator.waitingForSecondOperand === true) return;
-
-    if (!calculator.displayValue.includes(dot)) {
-        calculator.displayValue += dot;
-    }
-}
-
-function handleOperator(nextOperator) {
-    const { firstOperand, displayValue, operator } = calculator;
-    const inputValue = parseFloat(displayValue);
-
-    if (operator && calculator.waitingForSecondOperand) {
-        calculator.operator = nextOperator;
-        return;
-    }
-
-    if (firstOperand == null && !isNaN(inputValue)) {
-        calculator.firstOperand = inputValue;
-    } else if (operator) {
-        const result = performCalculation[operator](firstOperand, inputValue);
-
-        calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
-        calculator.firstOperand = result;
-        calculator.history.push(`${firstOperand} ${operator} ${inputValue} = ${result}`);
-        updateHistory();
-    }
-
-    calculator.waitingForSecondOperand = true;
-    calculator.operator = nextOperator;
-}
-
-const performCalculation = {
-    '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
-    '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
-    '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
-    '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
-    '=': (firstOperand, secondOperand) => secondOperand,
-};
-
-function resetCalculator() {
-    calculator.displayValue = '0';
-    calculator.firstOperand = null;
-    calculator.waitingForSecondOperand = false;
-    calculator.operator = null;
-    calculator.history = [];
-    updateHistory();
-}
-
-function updateDisplay() {
-    const display = document.querySelector('.calculator-display');
-    display.value = calculator.displayValue;
-}
-
-function updateHistory() {
-    const historyElement = document.getElementById('history');
-    historyElement.innerHTML = calculator.history.join('<br>');
-}
-
-function toggleTheme() {
-    document.body.classList.toggle('night-mode');
+document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle');
-    themeToggleButton.textContent = document.body.classList.contains('night-mode') ? 'Day Mode' : 'Night Mode';
-}
-
-updateDisplay();
-
-const keys = document.querySelector('.calculator-keys');
-keys.addEventListener('click', (event) => {
-    const { target } = event;
-    if (!target.matches('button')) {
-        return;
+    const historyList = document.getElementById('history-list');
+    const historyDisplay = document.getElementById('history-display');
+    const currentDisplay = document.getElementById('current-display');
+    const buttons = document.querySelectorAll('.btn');
+    const clearButton = document.getElementById('clear');
+    const equalsButton = document.getElementById('equals');
+    const backspaceButton = document.getElementById('backspace');
+    let history = [];
+    let currentInput = '';
+  
+    themeToggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.getAttribute('data-value');
+        if (value) {
+          currentInput += value;
+          currentDisplay.textContent = currentInput;
+        }
+      });
+    });
+  
+    clearButton.addEventListener('click', () => {
+      currentInput = '';
+      currentDisplay.textContent = '';
+    });
+  
+    equalsButton.addEventListener('click', () => {
+      if (currentInput) {
+        try {
+          const result = eval(currentInput);
+          history.push(`${currentInput} = ${result}`);
+          updateHistory();
+          currentInput = result;
+          currentDisplay.textContent = result;
+        } catch {
+          currentDisplay.textContent = 'Error';
+        }
+      }
+    });
+  
+    backspaceButton.addEventListener('click', () => {
+      currentInput = currentInput.slice(0, -1);
+      currentDisplay.textContent = currentInput;
+    });
+  
+    function updateHistory() {
+      historyList.innerHTML = '';
+      history.forEach(entry => {
+        const li = document.createElement('li');
+        li.textContent = entry;
+        historyList.appendChild(li);
+      });
     }
-
-    if (target.classList.contains('operator')) {
-        handleOperator(target.value);
-        updateDisplay();
-        return;
-    }
-
-    if (target.classList.contains('all-clear')) {
-        resetCalculator();
-        updateDisplay();
-        return;
-    }
-
-    inputDigit(target.value);
-    updateDisplay();
-});
-
-const themeToggleButton = document.getElementById('theme-toggle');
-themeToggleButton.addEventListener('click', toggleTheme);
+  });
+  

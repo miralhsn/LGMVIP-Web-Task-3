@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <div class="theme-switcher">
-            <button id="theme-toggle">Night Mode</button>
-        </div>
-        <div class="calculator-history" id="history"></div>
-        <div class="calculator-screen">
-            <input type="text" class="calculator-display" value="" disabled />
-        </div>
-        <div class="calculator-keys">
-            <button type="button" class="operator" value="+">+</button>
-            <button type="button" class="operator" value="-">-</button>
-            <button type="button" class="operator" value="*">&times;</button>
-            <button type="button" class="operator" value="/">&divide;</button>
-            <button type="button" value="7">7</button>
-            <button type="button" value="8">8</button>
-            <button type="button" value="9">9</button>
-            <button type="button" value="4">4</button>
-            <button type="button" value="5">5</button>
-            <button type="button" value="6">6</button>
-            <button type="button" value="1">1</button>
-            <button type="button" value="2">2</button>
-            <button type="button" value="3">3</button>
-            <button type="button" value="0">0</button>
-            <button type="button" value=".">.</button>
-            <button type="button" class="all-clear" value="all-clear">AC</button>
-            <button type="button" class="equal-sign operator" value="=">=</button>
-        </div>
+  <div class="container">
+    <div class="history">
+      <div class="history-header">
+        <h2>History</h2>
+        <button id="theme-toggle">🌞/🌜</button>
+      </div>
+      <ul id="history-list"></ul>
     </div>
-    <script src="script.js"></script>
+    <div class="calculator">
+      <div class="display">
+        <div id="history-display"></div>
+        <div id="current-display"></div>
+      </div>
+      <div class="buttons">
+        <div class="numbers">
+          <button class="btn" data-value="7">7</button>
+          <button class="btn" data-value="8">8</button>
+          <button class="btn" data-value="9">9</button>
+          <button class="btn" data-value="4">4</button>
+          <button class="btn" data-value="5">5</button>
+          <button class="btn" data-value="6">6</button>
+          <button class="btn" data-value="1">1</button>
+          <button class="btn" data-value="2">2</button>
+          <button class="btn" data-value="3">3</button>
+          <button class="btn" data-value="0">0</button>
+          <button class="btn" id="backspace">←</button>
+        </div>
+        <div class="operators">
+          <button class="btn" data-value="/">÷</button>
+          <button class="btn" data-value="*">×</button>
+          <button class="btn" data-value="-">−</button>
+          <button class="btn" data-value="+">+</button>
+          <button class="btn" data-value="(">(</button>
+          <button class="btn" data-value=")">)</button>
+          <button class="btn" data-value="%">%</button>
+          <button class="btn" id="clear">AC</button>
+          <button class="btn" id="equals">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
