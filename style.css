@@ -115,89 +115,98 @@ body {
 /* Global styles remain the same */
 
 .calculator {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-  }
-  
-  .display {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--button-bg-color);
-    padding: 20px;
-    border-radius: 20px;
-    border-bottom: 2px solid var(--text-color);
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between; /* Align numbers and operators containers side by side */
-    margin-top: 10px; /* Adjust spacing */
-    height: 50%; /* Set the height of the buttons container */
-  }
-  
-  .numbers {
-    flex: 2; /* Take more space to accommodate numbers */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px; /* Reduced gap for better spacing */
-    margin-right: 10px; /* Add space between numbers and operators containers */
-  }
-  
-  .operators-container {
-    flex: 1; /* Take less space */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: var(--button-bg-color);
-    border-radius: 20px;
-  }
-  
-  .operators {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Reduced gap for better spacing */
-  }
-  
-  .operators-bottom {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  /* Make AC button red and larger */
-  .red-btn {
-    background-color: var(--red-color);
-    color: white;
-  }
-  
-  /* Make = button larger */
-  #equals {
-    padding: 15px;
-    background-color: var(--green-color);
-    color: white;
-    font-size: 1.2em;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  /* Smaller operator buttons */
-  .btn {
-    padding: 15px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border: none;
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    border-radius: 10px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: var(--button-text-color);
-    color: var(--button-bg-color);
-  }
-  
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--button-bg-color);
+  padding: 20px;
+  border-radius: 20px;
+  border-bottom: 2px solid var(--text-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between; /* Align numbers and operators containers side by side */
+  margin-top: 10px; /* Adjust spacing */
+  height: 50%; /* Set the height of the buttons container */
+}
+
+.numbers {
+  flex: 2; /* Take more space to accommodate numbers */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Reduced gap for better spacing */
+  margin-right: 10px; /* Add space between numbers and operators containers */
+}
+
+.operators-container {
+  flex: 1; /* Take less space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--button-bg-color);
+  border-radius: 20px;
+}
+
+.operators-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Add some space between top buttons and other operators */
+}
+
+.operators {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Reduced gap for better spacing */
+}
+
+/* Make AC button larger and red */
+#clear {
+  padding: 15px;
+  background-color: var(--red-color);
+  color: white;
+  font-size: 1.2em;
+  border-radius: 50%; /* Make it circular */
+  transition: background-color 0.3s, color 0.3s;
+  width: 60px; /* Ensure circular shape */
+  height: 60px;
+}
+
+/* Make = button larger and green */
+#equals {
+  padding: 15px;
+  background-color: var(--green-color);
+  color: white;
+  font-size: 1.2em;
+  border-radius: 50%; /* Make it circular */
+  transition: background-color 0.3s, color 0.3s;
+  width: 60px; /* Ensure circular shape */
+  height: 60px;
+}
+
+.btn {
+  padding: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border-radius: 50%; /* Make buttons circular */
+  transition: background-color 0.3s, color 0.3s;
+  width: 60px; /* Ensure circular shape */
+  height: 60px;
+}
+
+.btn:hover {
+  background-color: var(--button-text-color);
+  color: var(--button-bg-color);
+}
