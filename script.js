@@ -27,25 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
   clearButton.addEventListener('click', () => {
     currentInput = '';
     currentDisplay.textContent = '';
-  });
-
-  equalsButton.addEventListener('click', () => {
-    if (currentInput) {
-      try {
-        const result = eval(currentInput);
-        history.push(`${currentInput} = ${result}`);
-        updateHistory();
-        currentInput = result;
-        currentDisplay.textContent = result;
-      } catch {
-        currentDisplay.textContent = 'Error';
-      }
-    }
+    historyDisplay.textContent = '';
   });
 
   backspaceButton.addEventListener('click', () => {
     currentInput = currentInput.slice(0, -1);
     currentDisplay.textContent = currentInput;
+  });
+
+  equalsButton.addEventListener('click', () => {
+    try {
+      const result = eval(currentInput);
+      history.push(`${currentInput} = ${result}`);
+      historyDisplay.textContent = currentInput;
+      currentDisplay.textContent = result;
+      currentInput = '';
+      updateHistory();
+    } catch {
+      currentDisplay.textContent = 'Error';
+      currentInput = '';
+    }
   });
 
   function updateHistory() {

@@ -47,7 +47,7 @@ body.dark-mode {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 20px;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .history-header {
@@ -129,25 +129,27 @@ input:checked + .slider:before {
   padding: 20px;
   border-radius: 20px;
   border-bottom: 2px solid var(--text-color);
+  font-size: 2.5em;
+  text-align: right;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-between; /* Align numbers and operators containers side by side */
-  margin-top: 10px; /* Adjust spacing */
-  height: 50%; /* Set the height of the buttons container */
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 50%;
 }
 
 .numbers {
-  flex: 2; /* Take more space to accommodate numbers */
+  flex: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px; /* Reduced gap for better spacing */
-  margin-right: 10px; /* Add space between numbers and operators containers */
+  gap: 10px;
+  margin-right: 10px;
 }
 
 .operators-container {
-  flex: 1; /* Take less space */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,32 +162,29 @@ input:checked + .slider:before {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-bottom: 10px; /* Add some space between top buttons and other operators */
+  margin-bottom: 10px;
 }
 
 .operators {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px; /* Reduced gap for better spacing */
+  gap: 10px;
 }
 
-/* Make AC and equals buttons larger and square */
 .large-btn {
   padding: 15px;
   background-color: var(--red-color);
   color: white;
   font-size: 1.2em;
-  border-radius: 10px; /* Square shape */
+  border-radius: 10px;
   transition: background-color 0.3s, color 0.3s;
-  height: 70px; /* Ensure square shape */
+  height: 70px;
 }
 
-/* Override for equals button */
 #equals {
   background-color: var(--green-color);
 }
 
-/* Smaller operator buttons */
 .btn {
   padding: 15px;
   font-size: 1.2em;
@@ -193,17 +192,11 @@ input:checked + .slider:before {
   border: none;
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
   background-color: var(--button-text-color);
   color: var(--button-bg-color);
-}
-
-/* Increase font size for displayed text */
-#history-display, #current-display {
-  font-size: 2em; /* Increase font size */
-  text-align: right; /* Align text to the right */
 }
