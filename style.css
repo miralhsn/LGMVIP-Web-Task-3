@@ -157,33 +157,31 @@ body {
     border-radius: 20px;
   }
   
-  .operators-top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 10px; /* Add some space between top buttons and other operators */
-  }
-  
   .operators {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px; /* Reduced gap for better spacing */
   }
   
-  /* Make AC and equals buttons larger and square */
-  .large-btn {
-    padding: 15px;
-    background-color: var(--red-color);
-    color: white;
-    font-size: 1.2em;
-    border-radius: 10px; /* Square shape */
-    transition: background-color 0.3s, color 0.3s;
-    height: 70px; /* Ensure square shape */
+  .operators-bottom {
+    display: flex;
+    justify-content: space-between;
   }
   
-  /* Override for equals button */
+  /* Make AC button red and larger */
+  .red-btn {
+    background-color: var(--red-color);
+    color: white;
+  }
+  
+  /* Make = button larger */
   #equals {
+    padding: 15px;
     background-color: var(--green-color);
+    color: white;
+    font-size: 1.2em;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
   }
   
   /* Smaller operator buttons */
