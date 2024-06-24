@@ -148,8 +148,7 @@ body {
 
 .operators-container {
   display: flex;
-  flex-direction: column; /* Arrange buttons vertically */
-  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center buttons horizontally */
   margin-top: 10px; /* Adjust spacing */
 }
 
