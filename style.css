@@ -1,5 +1,5 @@
 :root {
-  --background-color: linear-gradient(to bottom right, #ffffff, #a0e4f9); /* Light mode gradient */
+  --background-color: linear-gradient(to bottom right, #bdc1f8, #a3a8f6); /* Light mode gradient */
   --text-color: #000000;
   --button-bg-color: #f0f0f0;
   --button-text-color: #000000;
@@ -8,7 +8,7 @@
 }
 
 body.dark-mode {
-  --background-color: linear-gradient(to bottom right, #2c2c2c, #1a1a1a); /* Dark mode gradient */
+  --background-color: linear-gradient(to bottom right, #3a53a3, #25048a); /* Dark mode gradient */
   --text-color: #ffffff;
   --button-bg-color: #555555;
   --button-text-color: #ffffff;
@@ -183,6 +183,8 @@ input:checked + .slider:before {
   border-radius: 10px;
   transition: background-color 0.3s, color 0.3s;
   height: 70px;
+  --green-color: #4CAF50; /* Green color for equals button */
+  --red-color: #f44336; /* Red color for AC button */
 }
 
 .btn {
