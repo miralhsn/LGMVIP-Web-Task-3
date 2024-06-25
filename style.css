@@ -16,11 +16,6 @@ body.dark-mode {
   --red-color: #e74c3c; /* Dark mode red */
 }
 
-.large-btn {
-  background-color: var(--red-color); /* Red color for AC button */
-  color: white;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -28,12 +23,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: var(--background-color); /* Apply the gradient background */
+  background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
-
-
 
 .container {
   display: flex;
@@ -178,9 +171,18 @@ input:checked + .slider:before {
   gap: 10px;
 }
 
-
 #equals {
   background-color: var(--green-color);
+}
+
+.large-btn {
+  padding: 15px;
+  background-color: var(--red-color);
+  color: white;
+  font-size: 1.2em;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  height: 70px;
 }
 
 .btn {

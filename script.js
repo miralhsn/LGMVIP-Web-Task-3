@@ -10,44 +10,53 @@ document.addEventListener('DOMContentLoaded', () => {
   let history = [];
   let currentInput = '';
 
-  themeToggleButton.addEventListener('click', () => {
+  function toggleTheme() {
     document.body.classList.toggle('dark-mode');
-  });
+
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    document.documentElement.style.setProperty('--background-color', isDarkMode ? 'linear-gradient(to bottom right, #2c2c2c, #1a1a1a)' : 'linear-gradient(to bottom right, #ffffff, #a0e4f9)');
+    document.documentElement.style.setProperty('--text-color', isDarkMode ? '#ffffff' : '#000000');
+    document.documentElement.style.setProperty('--button-bg-color', isDarkMode ? '#555555' : '#f0f0f0');
+    document.documentElement.style.setProperty('--button-text-color', isDarkMode ? '#ffffff' : '#000000');
+  }
+
+  themeToggleButton.addEventListener('click', toggleTheme);
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       const value = button.getAttribute('data-value');
       if (value) {
         currentInput += value;
-        currentDisplay.textContent = currentInput; // Update current input display
+        currentDisplay.textContent = currentInput;
       }
     });
   });
 
   clearButton.addEventListener('click', () => {
     currentInput = '';
-    currentDisplay.textContent = ''; // Clear current input display
+    currentDisplay.textContent = '';
+    historyDisplay.textContent = '';
   });
 
   backspaceButton.addEventListener('click', () => {
     currentInput = currentInput.slice(0, -1);
-    currentDisplay.textContent = currentInput; // Update current input display on backspace
+    currentDisplay.textContent = currentInput;
   });
 
   equalsButton.addEventListener('click', () => {
     try {
       const result = eval(currentInput);
       history.push(`${currentInput} = ${result}`);
-      historyDisplay.textContent = `${currentInput} = ${result}`; // Update history display with calculation
-      currentDisplay.textContent = result; // Update current input display with result
-      currentInput = ''; // Clear current input after calculation
+      historyDisplay.textContent = `${currentInput} = ${result}`;
+      currentDisplay.textContent = result;
+      currentInput = '';
       updateHistory();
     } catch {
       currentDisplay.textContent = 'Error';
       currentInput = '';
     }
   });
-
+  
   function updateHistory() {
     historyList.innerHTML = '';
     history.forEach(entry => {
