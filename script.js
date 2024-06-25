@@ -19,29 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const value = button.getAttribute('data-value');
       if (value) {
         currentInput += value;
-        currentDisplay.textContent = currentInput;
+        currentDisplay.textContent = currentInput; // Update current input display
       }
     });
   });
 
   clearButton.addEventListener('click', () => {
     currentInput = '';
-    currentDisplay.textContent = '';
-    historyDisplay.textContent = '';
+    currentDisplay.textContent = ''; // Clear current input display
   });
 
   backspaceButton.addEventListener('click', () => {
     currentInput = currentInput.slice(0, -1);
-    currentDisplay.textContent = currentInput;
+    currentDisplay.textContent = currentInput; // Update current input display on backspace
   });
 
   equalsButton.addEventListener('click', () => {
     try {
       const result = eval(currentInput);
       history.push(`${currentInput} = ${result}`);
-      historyDisplay.textContent = currentInput;
-      currentDisplay.textContent = result;
-      currentInput = '';
+      historyDisplay.textContent = `${currentInput} = ${result}`; // Update history display with calculation
+      currentDisplay.textContent = result; // Update current input display with result
+      currentInput = ''; // Clear current input after calculation
       updateHistory();
     } catch {
       currentDisplay.textContent = 'Error';
