@@ -1,20 +1,19 @@
 :root {
-  --background-gradient-light: linear-gradient(to bottom right, #bdc1f8, #a3a8f6);
-  --background-gradient-dark: linear-gradient(to bottom right, #3a53a3, #25048a);
-  --text-color-light: #000000;
-  --text-color-dark: #ffffff;
-  --button-bg-light: #f0f0f0;
-  --button-bg-dark: #555555;
-  --button-text-light: #000000;
-  --button-text-dark: #ffffff;
-  --green-light: #4CAF50;
-  --green-dark: #2ecc71;
-  --red-light: #f44336;
-  --red-dark: #e74c3c;
-  --container-bg-light: #ffffff;
-  --container-bg-dark: #333333;
-  --display-bg-light: #ffffff;
-  --display-bg-dark: #444444;
+  --background-color: linear-gradient(to bottom right, #ffffff, #a0e4f9); /* Light mode gradient */
+  --text-color: #000000;
+  --button-bg-color: #f0f0f0;
+  --button-text-color: #000000;
+  --green-color: #4CAF50; /* Green color for equals button */
+  --red-color: #f44336; /* Red color for AC button */
+}
+
+body.dark-mode {
+  --background-color: linear-gradient(to bottom right, #2c2c2c, #1a1a1a); /* Dark mode gradient */
+  --text-color: #ffffff;
+  --button-bg-color: #555555;
+  --button-text-color: #ffffff;
+  --green-color: #2ecc71; /* Dark mode green */
+  --red-color: #e74c3c; /* Dark mode red */
 }
 
 body {
@@ -24,14 +23,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: var(--background-gradient-light);
-  color: var(--text-color-light);
-  transition: background 0.3s, color 0.3s;
-}
-
-body.dark-mode {
-  background: var(--background-gradient-dark);
-  color: var(--text-color-dark);
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -39,33 +33,22 @@ body.dark-mode {
   width: 90%;
   max-width: 1100px;
   height: 700px;
-  background: var(--container-bg-light);
-  border: 2px solid var(--text-color-light);
+  border: 2px solid var(--text-color);
   border-radius: 20px;
   overflow: hidden;
   padding: 10px;
-  transition: background 0.3s, border-color 0.3s;
-}
-
-body.dark-mode .container {
-  background: var(--container-bg-dark);
-  border-color: var(--text-color-dark);
+  background: var(--background-color); /* Apply the gradient background to the container */
 }
 
 .history {
   width: 30%;
   padding: 20px;
-  background: var(--button-bg-light);
+  background-color: var(--button-bg-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 20px;
   margin-right: 10px;
-  transition: background 0.3s;
-}
-
-body.dark-mode .history {
-  background: var(--button-bg-dark);
 }
 
 .history-header {
@@ -106,7 +89,7 @@ body.dark-mode .history {
   width: 21px;
   left: 2px;
   bottom: 2px;
-  background: var(--background-gradient-light);
+  background-color: var(--background-color);
   transition: .4s;
   border-radius: 50%;
   display: flex;
@@ -143,18 +126,12 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--display-bg-light);
+  background-color: var(--button-bg-color);
   padding: 20px;
   border-radius: 20px;
-  border-bottom: 2px solid var(--text-color-light);
+  border-bottom: 2px solid var(--text-color);
   font-size: 2.5em;
   text-align: right;
-  transition: background 0.3s, border-color 0.3s;
-}
-
-body.dark-mode .display {
-  background: var(--display-bg-dark);
-  border-color: var(--text-color-dark);
 }
 
 .buttons {
@@ -178,13 +155,8 @@ body.dark-mode .display {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
-  background: var(--button-bg-light);
+  background-color: var(--button-bg-color);
   border-radius: 20px;
-  transition: background 0.3s;
-}
-
-body.dark-mode .operators-container {
-  background: var(--button-bg-dark);
 }
 
 .operators-top {
@@ -201,16 +173,12 @@ body.dark-mode .operators-container {
 }
 
 #equals {
-  background-color: var(--green-light);
-}
-
-body.dark-mode #equals {
-  background-color: var(--green-dark);
+  background-color: var(--green-color);
 }
 
 .large-btn {
   padding: 15px;
-  background-color: var(--red-light);
+  background-color: var(--red-color);
   color: white;
   font-size: 1.2em;
   border-radius: 10px;
@@ -218,32 +186,18 @@ body.dark-mode #equals {
   height: 70px;
 }
 
-body.dark-mode .large-btn {
-  background-color: var(--red-dark);
-}
-
 .btn {
   padding: 15px;
   font-size: 1.2em;
   cursor: pointer;
   border: none;
-  background: var(--button-bg-light);
-  color: var(--button-text-light);
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
   border-radius: 10px;
-  transition: background 0.3s, color 0.3s;
-}
-
-body.dark-mode .btn {
-  background: var(--button-bg-dark);
-  color: var(--button-text-dark);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
-  background: var(--button-text-light);
-  color: var(--button-bg-light);
-}
-
-body.dark-mode .btn:hover {
-  background: var(--button-text-dark);
-  color: var(--button-bg-dark);
+  background-color: var(--button-text-color);
+  color: var(--button-bg-color);
 }
