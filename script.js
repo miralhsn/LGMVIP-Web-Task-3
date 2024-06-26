@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
       currentDisplay.textContent = result;
       currentInput = '';
       updateHistory();
-    } catch (error) {
+    } catch {
       currentDisplay.textContent = 'Error';
       currentInput = '';
     }
   });
-
+  
   function updateHistory() {
     historyList.innerHTML = '';
     history.forEach(entry => {
