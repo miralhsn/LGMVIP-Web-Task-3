@@ -25,7 +25,7 @@ This project implements a simple calculator with basic arithmetic operations usi
 
 ## Access the Calculator
 
-To access the calculator webapp, [click here](https://github.com/miralhsn/LGMVIP-Web-Task-3.git).
+To access the calculator webapp, [click here](https://miralhsn.github.io/LGMVIP-Web-Task-3/).
 
 
 ## Usage
