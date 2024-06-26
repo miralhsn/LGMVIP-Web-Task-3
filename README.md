@@ -23,6 +23,11 @@ This project implements a simple calculator with basic arithmetic operations usi
 ![Calculator Dark Mode](screenshots/calculator-preview2.png)
 
 
+## Access the Calculator
+
+To access the calculator webapp, [click here](https://github.com/miralhsn/LGMVIP-Web-Task-3.git).
+
+
 ## Usage
 
 1. **Clone the Repository**:
