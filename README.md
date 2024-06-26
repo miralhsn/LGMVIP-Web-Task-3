@@ -1,46 +1,50 @@
 # Calculator
 
-This is a simple calculator web application that supports basic arithmetic operations and displays a history of calculations. The calculator also supports light and dark modes, which can be toggled using a switch.
+This project implements a simple calculator with basic arithmetic operations using HTML, CSS, and JavaScript. It features a history display and a toggle for light and dark modes.
 
 ## Features
 
-- Basic arithmetic operations: addition, subtraction, multiplication, division, percentage, and parentheses for grouping.
-- History of calculations displayed on the left side.
-- Light and dark mode toggle.
-- Clear and backspace functionalities.
+- **Calculator Operations**: Addition, subtraction, multiplication, division, percentage calculations.
+- **History Display**: Shows previous calculations.
+- **Light/Dark Mode**: Toggle between light and dark themes.
 
 ## Technologies Used
 
-- HTML
-- CSS
-- JavaScript
+- **HTML**: Structure of the calculator.
+- **CSS**: Styling for the calculator and theme toggle.
+- **JavaScript**: Logic for calculator operations and theme toggling.
 
-## Installation
+## Preview
 
-1. Clone the repository to your local machine:
-    ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd your-repo-name
-    ```
+### Light Mode
+![Calculator Light Mode](screenshots/calculator-preview1.png)
+
+### Dark Mode
+![Calculator Dark Mode](screenshots/calculator-preview2.png)
+
 
 ## Usage
 
-1. Open `index.html` in your preferred web browser:
-    ```bash
-    open index.html
+1. **Clone the Repository**:
+    ```sh
+    git clone https://github.com/miralhsn/LGMVIP-Web-Task-3.git
     ```
+2. **Open the Project**:
+    Open `index.html` in your web browser.
 
-## Project Structure
+## Customization
 
-```plaintext
-.
-├── index.html
-├── style.css
-└── script.js
+- **Theme**: Modify the CSS variables in `style.css` to change colors for light and dark modes.
+- **Functionality**: Edit `script.js` to add more operations or customize behavior.
 
-## Live Demo
+## Contributing
 
-Click [here](https://github.com/miralhsn/LGMVIP-Web-Task-3.git) to view the live demo.
+Contributions are welcome! Fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or suggestions, feel free to reach out to me at [miralqureshi@gmail.com](mailto:miralqureshi@gmail.com).
